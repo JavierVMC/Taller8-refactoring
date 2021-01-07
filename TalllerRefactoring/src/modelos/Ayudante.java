@@ -2,28 +2,15 @@ package modelos;
 
 import java.util.ArrayList;
 
-public class Ayudante {
-    protected Estudiante est;
+public class Ayudante extends Estudiante{
     public ArrayList<Paralelo> paralelos;
 
-    Ayudante(Estudiante e){
-    	est = e;
-    }
-    public String getMatricula() {
-        return est.getMatricula();
+    public ArrayList<Paralelo> getParalelos() {
+        return paralelos;
     }
 
-    public void setMatricula(String matricula) {
-        est.setMatricula(matricula);
-    }
-
-    //Getters y setters se delegan en objeto estudiante para no duplicar código
-    public String getNombre() {
-        return est.getNombre();
-    }
-
-    public String getApellido() {
-        return est.getApellido();
+    public void setParalelos(ArrayList<Paralelo> paralelos) {
+        this.paralelos = paralelos;
     }
 
     //Los paralelos se añaden/eliminan directamente del Arraylist de paralelos
@@ -34,5 +21,62 @@ public class Ayudante {
         for(Paralelo par:paralelos){
             //Muestra la info general de cada paralelo
         }
+    }
+    
+    //Getters y Setters de la herencia
+        public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getFacultad() {
+        return facultad;
+    }
+
+    public void setFacultad(String facultad) {
+        this.facultad = facultad;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }
