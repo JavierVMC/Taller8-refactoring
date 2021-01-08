@@ -16,6 +16,7 @@ public class Usuario {
     protected String nombre;
     protected String apellido;
     protected int edad;
+    protected String facultad;
     protected String direccion;
     protected String telefono;
     protected ArrayList<Paralelo> paralelos;
@@ -44,6 +45,10 @@ public class Usuario {
         return telefono;
     }
 
+    public String getFacultad() {
+        return facultad;
+    }
+
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
@@ -63,5 +68,8 @@ public class Usuario {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+
+    public void setFacultad(String facultad) {
+        this.facultad = facultad;
+    }
 }

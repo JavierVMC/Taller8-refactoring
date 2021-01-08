@@ -6,7 +6,6 @@ import modelos.materias.Paralelo;
 public class Estudiante extends Usuario{
     //Informacion del estudiante
     protected String matricula;
-    protected String facultad;
     
     //Getter y setter de Matricula
 
@@ -18,15 +17,6 @@ public class Estudiante extends Usuario{
         this.matricula = matricula;
     }
 
-    //Getter y setter de la Facultad
-    public String getFacultad() {
-        return facultad;
-    }
-
-    public void setFacultad(String facultad) {
-        this.facultad = facultad;
-    }
-    
     //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
     public double CalcularNotaInicial(Notas notas){
         double notaInicial=0;
