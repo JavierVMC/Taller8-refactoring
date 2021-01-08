@@ -3,33 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelos.materias;
+package modelo.calificaciones;
 
 /**
  *
  * @author test1
  */
-public class Notas {
-    private Paralelo p;
+public class Calificacion {
     private double nexamen;
     private double ndeberes;
     private double nlecciones;
     private double ntalleres;
 
-    public Notas(Paralelo p, double nexamen, double ndeberes, double nlecciones, double ntalleres) {
-        this.p = p;
+    public Calificacion() {
+    }
+    
+    public Calificacion(double nexamen, double ndeberes, double nlecciones, double ntalleres) {
         this.nexamen = nexamen;
         this.ndeberes = ndeberes;
         this.nlecciones = nlecciones;
         this.ntalleres = ntalleres;
-    }
-
-    public Paralelo getP() {
-        return p;
-    }
-
-    public void setP(Paralelo p) {
-        this.p = p;
     }
 
     public double getNexamen() {
@@ -63,4 +56,10 @@ public class Notas {
     public void setNtalleres(double ntalleres) {
         this.ntalleres = ntalleres;
     }
+    
+    //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
+    public double CalcularNota(){
+        return ((nexamen+ndeberes+nlecciones)*0.80) + ((ntalleres)*0.20);
+    }
+    
 }

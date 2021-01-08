@@ -1,14 +1,24 @@
 package modelos.usuarios;
 
-import modelos.materias.Notas;
-import modelos.materias.Paralelo;
+import java.util.List;
+import java.util.ArrayList;
+import modelo.calificaciones.Notas;
 
 public class Estudiante extends Usuario{
     //Informacion del estudiante
     protected String matricula;
+    protected List<Notas> notas;
+
+    public Estudiante() {
+        notas = new ArrayList<>();
+    }
+
+    public Estudiante(String matricula) {
+        this();
+        this.matricula = matricula;
+    }
     
     //Getter y setter de Matricula
-
     public String getMatricula() {
         return matricula;
     }
@@ -17,41 +27,7 @@ public class Estudiante extends Usuario{
         this.matricula = matricula;
     }
 
-    //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
-    public double CalcularNotaInicial(Notas notas){
-        double notaInicial=0;
-        for(Paralelo par:paralelos){
-            if(notas.getP().equals(par)){
-                notaInicial = notaFinal(notas.getNexamen(),notas.getNdeberes(),notas.getNlecciones(),notas.getNtalleres());
-            }
-        }
-        return notaInicial;
-    }
-    
-    //Calcula y devuelve la nota final contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
-    
-    public double CalcularNotaFinal(Notas notas){
-        double notaFinal=0;
-        for(Paralelo par:paralelos){
-            if(notas.getP().equals(par)){
-                notaFinal = notaFinal(notas.getNexamen(),notas.getNdeberes(),notas.getNlecciones(),notas.getNtalleres());
-            }
-        }
-        return notaFinal;
-    }
-    
-    //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. Esta nota es solo el promedio de las dos calificaciones anteriores.
-    public double CalcularNotaTotal(Paralelo p){
-        double notaTotal=0;
-        for(Paralelo par:paralelos){
-            if(p.equals(par)){
-                notaTotal=(p.getMateria().getNotaInicial()+p.getMateria().getNotaFinal())/2;
-            }
-        }
-        return notaTotal;
-    }
-    
-    public double notaFinal(double nexamen, double ndeberes, double nlecciones, double ntalleres){
-        return ((nexamen+ndeberes+nlecciones)*0.80) + ((ntalleres)*0.20);
+    public List<Notas> getNotas() {
+        return notas;
     }
 }

@@ -6,6 +6,7 @@
 package modelos.usuarios;
 
 import java.util.ArrayList;
+import java.util.List;
 import modelos.materias.Paralelo;
 
 /**
@@ -19,7 +20,21 @@ public class Usuario {
     protected String facultad;
     protected String direccion;
     protected String telefono;
-    protected ArrayList<Paralelo> paralelos;
+    protected List<Paralelo> paralelos;
+
+    public Usuario() {
+        paralelos = new ArrayList<>();
+    }
+
+    public Usuario(String nombre, String apellido, int edad, String facultad, String direccion, String telefono) {
+        this();
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.facultad = facultad;
+        this.direccion = direccion;
+        this.telefono = telefono;
+    }
 
     public String getApellido() {
         return apellido;
@@ -37,7 +52,7 @@ public class Usuario {
         return nombre;
     }
 
-    public ArrayList<Paralelo> getParalelos() {
+    public List<Paralelo> getParalelos() {
         return paralelos;
     }
 
