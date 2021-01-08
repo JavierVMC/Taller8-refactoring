@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Estudiante{
     //Informacion del estudiante
-    private String matricula;
-    private String nombre;
-    private String apellido;
-    private String facultad;
-    private int edad;
-    private String direccion;
-    private String telefono;
-    private ArrayList<Paralelo> paralelos;
+    protected String matricula;
+    protected String nombre;
+    protected String apellido;
+    protected String facultad;
+    protected int edad;
+    protected String direccion;
+    protected String telefono;
+    protected ArrayList<Paralelo> paralelos;
     
     //Getter y setter de Matricula
 
@@ -79,13 +79,11 @@ public class Estudiante{
     }
     
     //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
-    public double CalcularNotaInicial(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
+    public double CalcularNotaInicial(Notas notas){
         double notaInicial=0;
         for(Paralelo par:paralelos){
-            if(p.equals(par)){
-                double notaTeorico=(nexamen+ndeberes+nlecciones)*0.80;
-                double notaPractico=(ntalleres)*0.20;
-                notaInicial=notaTeorico+notaPractico;
+            if(notas.getP().equals(par)){
+                notaInicial = notaFinal(notas.getNexamen(),notas.getNdeberes(),notas.getNlecciones(),notas.getNtalleres());
             }
         }
         return notaInicial;
@@ -93,13 +91,11 @@ public class Estudiante{
     
     //Calcula y devuelve la nota final contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
     
-    public double CalcularNotaFinal(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
+    public double CalcularNotaFinal(Notas notas){
         double notaFinal=0;
         for(Paralelo par:paralelos){
-            if(p.equals(par)){
-                double notaTeorico=(nexamen+ndeberes+nlecciones)*0.80;
-                double notaPractico=(ntalleres)*0.20;
-                notaFinal=notaTeorico+notaPractico;
+            if(notas.getP().equals(par)){
+                notaFinal = notaFinal(notas.getNexamen(),notas.getNdeberes(),notas.getNlecciones(),notas.getNtalleres());
             }
         }
         return notaFinal;
@@ -115,11 +111,8 @@ public class Estudiante{
         }
         return notaTotal;
     }
+    
+    public double notaFinal(double nexamen, double ndeberes, double nlecciones, double ntalleres){
+        return ((nexamen+ndeberes+nlecciones)*0.80) + ((ntalleres)*0.20);
+    }
 }
-        
-    
-    
-    
-            
-        
-        

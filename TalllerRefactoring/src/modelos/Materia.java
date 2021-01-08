@@ -15,5 +15,4 @@ public class Materia {
     public double getNotaInicial() {
         return notaInicial;
     }
-    
 }

@@ -37,6 +37,4 @@ public class Paralelo {
     public void mostrarListado(){
         //No es necesario implementar
     }
-    
-    
 }
