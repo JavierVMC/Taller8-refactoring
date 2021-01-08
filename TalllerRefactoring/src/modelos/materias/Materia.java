@@ -1,4 +1,4 @@
-package modelos;
+package modelos.materias;
 
 public class Materia {
     private String codigo;

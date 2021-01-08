@@ -1,6 +1,7 @@
-package modelos;
+package modelos.usuarios;
 
 import java.util.ArrayList;
+import modelos.materias.Paralelo;
 
 public class Ayudante extends Estudiante{
     private ArrayList<Paralelo> paralelos;

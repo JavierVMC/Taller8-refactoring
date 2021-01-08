@@ -1,4 +1,7 @@
-package modelos;
+package modelos.usuarios;
+
+import modelos.materias.Notas;
+import modelos.materias.Paralelo;
 
 public class Estudiante extends Usuario{
     //Informacion del estudiante

@@ -1,6 +1,7 @@
-package modelos;
+package modelos.usuarios;
 
 import java.util.ArrayList;
+import modelos.materias.Paralelo;
 
 public class Profesor extends Usuario{
     private String codigo;

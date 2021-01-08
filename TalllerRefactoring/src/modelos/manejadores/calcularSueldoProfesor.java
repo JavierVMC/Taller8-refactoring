@@ -1,4 +1,6 @@
-package modelos;
+package modelos.manejadores;
+
+import modelos.usuarios.Profesor;
 
 public class calcularSueldoProfesor {
     

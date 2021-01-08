@@ -1,5 +1,8 @@
-package modelos;
+package modelos.materias;
 
+import modelos.usuarios.Profesor;
+import modelos.usuarios.Estudiante;
+import modelos.usuarios.Ayudante;
 import java.util.ArrayList;
 
 public class Paralelo {
