@@ -1,8 +1,16 @@
 package modelos;
 
 public class InformacionAdicionalProfesor {
-    public int añosdeTrabajo;
-    public String facultad;
-    public double BonoFijo;
+    private int añosdeTrabajo;
+    private String facultad;
+    private double BonoFijo;
+
+    public int getAñosdeTrabajo() {
+        return añosdeTrabajo;
+    }
+
+    public double getBonoFijo() {
+        return BonoFijo;
+    }
     
 }

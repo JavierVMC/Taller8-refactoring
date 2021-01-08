@@ -3,8 +3,8 @@ package modelos;
 import java.util.ArrayList;
 
 public class Ayudante {
-    protected Estudiante est;
-    public ArrayList<Paralelo> paralelos;
+    private Estudiante est;
+    private ArrayList<Paralelo> paralelos;
 
     Ayudante(Estudiante e){
     	est = e;
